@@ -59,13 +59,13 @@ import { Card, CardImg, CardText, CardBody,
 
     }
     const  DishDetail = (props) => {
-        const dish=this.props.dish
+        const dish=props.dish
         console.log(dish);
         if (dish == null) {
             return (<div></div>);
         }
-        const dishItem = this.renderDish(dish);
-        const dishComment = this.renderComments(dish.comments);
+        const dishItem = <RenderDish dish={props.dish} />
+        const dishComment = <RenderComments comments={props.dish.comments}/>
         return(
             <div className='container'>
                 <div className="row">
